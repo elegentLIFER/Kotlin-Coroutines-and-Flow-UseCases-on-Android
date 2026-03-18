@@ -10,7 +10,7 @@ val scope = CoroutineScope(Dispatchers.Default)
 fun main() = runBlocking<Unit> {
 
     val job = scope.launch {
-        delay(100)
+        delay(1000)
         println("Coroutine completed")
     }
 
@@ -20,7 +20,7 @@ fun main() = runBlocking<Unit> {
         }
     }
 
-    delay(50)
+    delay(500)
     onDestroy()
 }
 

@@ -29,7 +29,7 @@ fun main() = runBlocking {
 private fun calculateFactorialOf(number: Int): Flow<BigInteger> = flow {
     var factorial = BigInteger.ONE
     for (i in 1..number) {
-        delay(10)
+        delay(100)
         factorial = factorial.multiply(BigInteger.valueOf(i.toLong()))
         emit(factorial)
     }

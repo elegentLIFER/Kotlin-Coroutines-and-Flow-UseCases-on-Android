@@ -13,5 +13,4 @@ suspend fun main() {
         .collect { collectedValue ->
             println(collectedValue)
         }
-
 }

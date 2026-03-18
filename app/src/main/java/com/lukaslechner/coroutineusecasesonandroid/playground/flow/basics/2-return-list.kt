@@ -17,7 +17,7 @@ fun main() {
 private fun calculateFactorialOf(number: Int): List<BigInteger> = buildList {
     var factorial = BigInteger.ONE
     for (i in 1..number) {
-        Thread.sleep(10)
+        Thread.sleep(100)
         factorial = factorial.multiply(BigInteger.valueOf(i.toLong()))
         add(factorial)
     }

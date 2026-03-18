@@ -14,22 +14,22 @@ fun main() = runBlocking {
     }
     val job = GlobalScope.launch(coroutineExceptionHandler) {
         val child = launch {
-            delay(50)
+            delay(500)
             throw RuntimeException()
             println("Still running")
-            delay(50)
+            delay(500)
             println("Still running")
-            delay(50)
+            delay(500)
             println("Still running")
-            delay(50)
+            delay(500)
             println("Still running")
         }
     }
 
-    delay(100)
+    delay(1000)
 
     job.cancel()
 
-    delay(300)
+    delay(3000)
 
 }
