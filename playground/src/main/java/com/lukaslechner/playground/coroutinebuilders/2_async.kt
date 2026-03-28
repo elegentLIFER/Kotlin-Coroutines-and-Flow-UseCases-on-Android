@@ -4,6 +4,14 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
+/**
+ * 1. async = 启动有返回值的并发协程
+ *      launch：无返回值，用于执行任务
+ *      async：返回 Deferred，用于获取结果
+ * 2. .await() = 等待协程完成并获取结果
+ *      调用时才会等待结果
+ *      不影响协程已经并发执行
+ */
 fun main() = runBlocking<Unit> {
 
     val startTime = System.currentTimeMillis()
@@ -27,7 +35,7 @@ fun main() = runBlocking<Unit> {
 }
 
 suspend fun networkCall(number: Int): String {
-    delay(500)
+    delay(5000)
     return "Result $number"
 }
 

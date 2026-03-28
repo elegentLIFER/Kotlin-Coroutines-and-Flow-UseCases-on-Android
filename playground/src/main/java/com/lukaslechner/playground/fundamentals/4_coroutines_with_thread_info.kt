@@ -8,8 +8,8 @@ import kotlinx.coroutines.runBlocking
 fun main() = runBlocking {
     println("main starts")
     joinAll(
-        async { threadInfoCoroutine(1, 500) },
-        async { threadInfoCoroutine(2, 300) }
+        async { threadInfoCoroutine(1, 5000) },
+        async { threadInfoCoroutine(2, 3000) }
     )
     println("main ends")
 }

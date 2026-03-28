@@ -2,11 +2,14 @@ package com.lukaslechner.playground.fundamentals
 
 import kotlinx.coroutines.*
 
+/**
+ * 协程可以在执行中途自由切换线程，且整个过程依然是非阻塞、轻量的并发执行。
+ */
 fun main() = runBlocking {
     println("main starts")
     joinAll(
-        async { threadSwitchingCoroutine(1, 500) },
-        async { threadSwitchingCoroutine(2, 300) }
+        async { threadSwitchingCoroutine(1, 5000) },
+        async { threadSwitchingCoroutine(2, 3000) }
     )
     println("main ends")
 }
